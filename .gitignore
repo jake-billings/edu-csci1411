@@ -1,3 +1,5 @@
 .history
 .ssh
 .viminfo
+.idea
+cmake-build-debug
