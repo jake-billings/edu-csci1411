@@ -4,10 +4,12 @@
 .idea
 cmake-build-debug
 CMakeLists.txt
-
 lab01/lab01
 lab01/lab01a
 lab02/billingsjlab02
 lab02/billingsjlab02a
 lab02/billingsjlab02b
 lab02/lab02b
+lab03/lab03
+lab03/lab03a
+lab03/lab03b
