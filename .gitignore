@@ -2,6 +2,7 @@
 .ssh
 .viminfo
 .idea
+.DS_Store
 cmake-build-debug
 CMakeLists.txt
 lab01/lab01
@@ -13,6 +14,6 @@ lab02/lab02b
 lab03/lab03
 lab03/lab03a
 lab03/lab03b
-lab04/lab04
-lab04/lab04a
+lab04/billingsjLab04
+lab04/Lab04a
 lab04/lab04b
