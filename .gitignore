@@ -3,6 +3,7 @@
 .viminfo
 .idea
 .DS_Store
+.swp
 cmake-build-debug
 CMakeLists.txt
 lab01/lab01
