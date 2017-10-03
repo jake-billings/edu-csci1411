@@ -2,6 +2,7 @@
  * Name: Jake Billings
  * Class: CSCI 1411-001
  * Description: Function implementation file for Lab06 (see billingsjlab06.cpp for program description)
+ * Status: compiles and runs on VS, Clion, and csegrid
  */
 
 //Include cout

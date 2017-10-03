@@ -3,6 +3,7 @@
  * Class: CSCI 1411-001
  * Description: CSCI1410_PA2: Magic Eight Ball. This program is a full-featured
  * customizable digital magic eight ball.
+ * Status: compiles and runs on VS, Clion, and csegrid
  */
 
 //Include Functions

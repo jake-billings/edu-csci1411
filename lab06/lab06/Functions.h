@@ -1,6 +1,9 @@
-//
-// Created by Jake Billings on 9/29/17.
-//
+/**
+ * Name: Jake Billings
+ * Class: CSCI 1411-001
+ * Description: Header file for Functions.cpp (See billingsjLab06.cpp for program description and Functions.cpp for implementation)
+ * Status: compiles and runs on VS, Clion, and csegrid
+ */
 
 #ifndef EDU_CSCI1411_FUNCTIONS_H
 #define EDU_CSCI1411_FUNCTIONS_H
