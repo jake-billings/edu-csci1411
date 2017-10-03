@@ -47,9 +47,8 @@ void readResponsesFromFile(Response* responses, unsigned int* responseCount, con
  *
  * @param responses The array of responses to read into
  * @param responseCount The number of responses already in that array
- * @param maxResponses The maximum number of responses that can fit in the array
  */
-void playGame(Response* responses, unsigned int* responseCount, const unsigned int maxResponses);
+void playGame(Response* responses, unsigned int* responseCount);
 
 
 /**
@@ -67,9 +66,8 @@ void addResponse(Response* responses, unsigned int* responseCount, const unsigne
  *
  * @param responses The array of responses to read into
  * @param responseCount The number of responses already in that array
- * @param maxResponses The maximum number of responses that can fit in the array
  */
-void printResponses(Response* responses, unsigned int* responseCount, const unsigned int maxResponses);
+void printResponses(Response* responses, unsigned int* responseCount);
 
 
 /**
@@ -77,18 +75,16 @@ void printResponses(Response* responses, unsigned int* responseCount, const unsi
  *
  * @param responses The array of responses to read into
  * @param responseCount The number of responses already in that array
- * @param maxResponses The maximum number of responses that can fit in the array
  */
-void printResponsesAlphabetically(Response* responses, unsigned int* responseCount, const unsigned int maxResponses);
+void printResponsesAlphabetically(Response* responses, unsigned int* responseCount);
 
 /**
  * Prints all responses in the responses array alphabetically by alphabetizing the array by type in memory then printing it
  *
  * @param responses The array of responses to read into
  * @param responseCount The number of responses already in that array
- * @param maxResponses The maximum number of responses that can fit in the array
  */
-void printResponsesByType(Response* responses, unsigned int* responseCount, const unsigned int maxResponses);
+void printResponsesByType(Response* responses, unsigned int* responseCount);
 
 
 /**
@@ -96,15 +92,18 @@ void printResponsesByType(Response* responses, unsigned int* responseCount, cons
  *
  * @param responses The array of responses to read out of
  * @param responseCount The number of responses already in that array
- * @param maxResponses The maximum number of responses that can fit in the array
  */
-void writeResponsesToFile(Response* responses, unsigned int* responseCount, const unsigned int maxResponses);
+void writeResponsesToFile(Response* responses, unsigned int* responseCount);
 
 
 /**
  * Executes one iteration of the menu loop.
  *
  * Returns a boolean value that is true if the program should continue execution.
+ *
+ * @param responses The array of responses to read out of
+ * @param responseCount The number of responses already in that array
+ * @param maxResponses The maximum number of responses that can fit in the array
  */
 bool menuIteration(Response* responses, unsigned int* responseCount, const unsigned int maxResponses);
 

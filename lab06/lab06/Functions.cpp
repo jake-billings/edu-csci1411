@@ -38,6 +38,12 @@ void readResponsesFromFile(Response* responses, unsigned int* responseCount, con
     cin.ignore(); //Ignore since we're using getline()
     getline(cin, filePath);
 
+    //Default to responses.bin
+    if (filePath=="") {
+        cout << "Defaulting to \"responses.bin\"." << endl;
+        filePath = "responses.bin";
+    }
+
     //Initialize an input stream pointed at the input file
     ifstream input;
     input.open(filePath);
@@ -80,9 +86,8 @@ void readResponsesFromFile(Response* responses, unsigned int* responseCount, con
  *
  * @param responses The array of responses to read into
  * @param responseCount The number of responses already in that array
- * @param maxResponses The maximum number of responses that can fit in the array
  */
-void playGame(Response* responses, unsigned int* responseCount, const unsigned int maxResponses) {
+void playGame(Response* responses, unsigned int* responseCount) {
     //Abort if there are no responses.
     if (*responseCount<1) {
         cout << "There are no responses, so it is impossible to play the game." << endl;
@@ -105,6 +110,12 @@ void playGame(Response* responses, unsigned int* responseCount, const unsigned i
  * @param maxResponses The maximum number of responses that can fit in the array
  */
 void addResponse(Response* responses, unsigned int* responseCount, const unsigned int maxResponses) {
+    //If we've exceeded available memory, print an error message and prevent response creation.
+    if (*responseCount >= maxResponses) {
+        cout << "Sorry. I can't crate a new response because the response array is full." << endl;
+        return;
+    }
+
     //Allocate a local variable to store incoming data
     Response r;
 
@@ -131,9 +142,8 @@ void addResponse(Response* responses, unsigned int* responseCount, const unsigne
  *
  * @param responses The array of responses to read into
  * @param responseCount The number of responses already in that array
- * @param maxResponses The maximum number of responses that can fit in the array
  */
-void printResponses(Response* responses, unsigned int* responseCount, const unsigned int maxResponses) {
+void printResponses(Response* responses, unsigned int* responseCount) {
     //Iterate through each response index (0, responseCount)
     for (unsigned int i = 0; i < *responseCount; i++) {
         //Print the response
@@ -147,9 +157,8 @@ void printResponses(Response* responses, unsigned int* responseCount, const unsi
  *
  * @param responses The array of responses to read into
  * @param responseCount The number of responses already in that array
- * @param maxResponses The maximum number of responses that can fit in the array
  */
-void printResponsesAlphabetically(Response* responses, unsigned int* responseCount, const unsigned int maxResponses) {
+void printResponsesAlphabetically(Response* responses, unsigned int* responseCount) {
     //Sort the responses in memory using bubble sort by text
     //Perform a double iteration over the array
     for (unsigned long i = 0; i < *responseCount; i++) {
@@ -168,7 +177,7 @@ void printResponsesAlphabetically(Response* responses, unsigned int* responseCou
     }
 
     //Print the responses in the order they're in in memory, which is now alphabetical
-    printResponses(responses, responseCount, maxResponses);
+    printResponses(responses, responseCount);
 }
 
 /**
@@ -176,9 +185,8 @@ void printResponsesAlphabetically(Response* responses, unsigned int* responseCou
  *
  * @param responses The array of responses to read into
  * @param responseCount The number of responses already in that array
- * @param maxResponses The maximum number of responses that can fit in the array
  */
-void printResponsesByType(Response* responses, unsigned int* responseCount, const unsigned int maxResponses) {
+void printResponsesByType(Response* responses, unsigned int* responseCount) {
     //Sort the responses in memory using bubble sort by type
     //Perform a double iteration over the array
     for (unsigned long i = 0; i < *responseCount; i++) {
@@ -197,7 +205,7 @@ void printResponsesByType(Response* responses, unsigned int* responseCount, cons
     }
 
     //Print the responses in the order they're in in memory, which is now alphabetical
-    printResponses(responses, responseCount, maxResponses);
+    printResponses(responses, responseCount);
 }
 
 
@@ -206,9 +214,8 @@ void printResponsesByType(Response* responses, unsigned int* responseCount, cons
  *
  * @param responses The array of responses to read out of
  * @param responseCount The number of responses already in that array
- * @param maxResponses The maximum number of responses that can fit in the array
  */
-void writeResponsesToFile(Response* responses, unsigned int* responseCount, const unsigned int maxResponses) {
+void writeResponsesToFile(Response* responses, unsigned int* responseCount) {
     //Find out what file to read from
     string filePath;
     cout << "What file would you like to write to? (I recommend ending this file in \".bin\" for consistency.)" << endl;
@@ -231,9 +238,45 @@ void writeResponsesToFile(Response* responses, unsigned int* responseCount, cons
 
 
 /**
+ * Deletes a response from the response array
+ *
+ * @param responses The array of responses to read out of
+ * @param responseCount The number of responses already in that array
+ */
+void removeResponse(Response* responses, unsigned int* responseCount) {
+    //Allocate a local variable and get user input for which response to delete
+    unsigned int targetIndex;
+    cout << "Which response would you like to delete (pick by index)?" << endl;
+    cin >> targetIndex;
+
+    //Validate the target index
+    while (targetIndex >= *responseCount) {
+        cout << "Sorry. Please pick an index that exists in the response array." << endl;
+        cin >> targetIndex;
+    }
+
+    //Move the array data left in order to overwrite the deleted element and shift all the
+    // memory elements left
+    // Start at the source, which is the response after the target of deleting
+    // Move the data starting at this source to the location of the target overwriting it in the process
+    // Stop once you've copied the number of bytes equal to the all of the data in the array
+    memmove(responses+targetIndex,
+            responses+(targetIndex+1),
+            (*responseCount-targetIndex-1)*sizeof(Response));
+
+    //Update the responseCount variable to reflect the shift
+    *responseCount = *responseCount - 1;
+}
+
+
+/**
  * Executes one iteration of the menu loop.
  * 
  * Returns a boolean value that is true if the program should continue execution.
+ *
+ * @param responses The array of responses to read out of
+ * @param responseCount The number of responses already in that array
+ * @param maxResponses The maximum number of responses that can fit in the array
  */
 bool menuIteration(Response* responses, unsigned int* responseCount, const unsigned int maxResponses) {
 	//Print the menu options.
@@ -245,6 +288,7 @@ bool menuIteration(Response* responses, unsigned int* responseCount, const unsig
 	cout << "e.\tPrint out responses by type(positive, negative, vague)" << endl;
 	cout << "f.\tWrite responses to a file" << endl;
 	cout << "g.\tExit" << endl;
+    cout << "h.\tDelete response (Extra Credit)" << endl;
 
 	//Allocate a space in memory for the user's answer and read it using cin
 	char inputSelectionRaw;
@@ -260,22 +304,25 @@ bool menuIteration(Response* responses, unsigned int* responseCount, const unsig
             readResponsesFromFile(responses, responseCount, maxResponses);
             break;
 	    case 'b':
-            playGame(responses, responseCount, maxResponses);
+            playGame(responses, responseCount);
             break;
 	    case 'c':
             addResponse(responses, responseCount, maxResponses);
             break;
 	    case 'd':
-            printResponsesAlphabetically(responses, responseCount, maxResponses);
+            printResponsesAlphabetically(responses, responseCount);
             break;
 	    case 'e':
-            printResponsesByType(responses, responseCount, maxResponses);
+            printResponsesByType(responses, responseCount);
             break;
 	    case 'f':
-            writeResponsesToFile(responses, responseCount, maxResponses);
+            writeResponsesToFile(responses, responseCount);
             break;
         case 'g':
             return false;
+        case 'h':
+            removeResponse(responses, responseCount);
+            break;
         default:
             handleUnknownInput();
 	}
