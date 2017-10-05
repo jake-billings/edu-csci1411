@@ -29,6 +29,8 @@ struct MovieData {
 //----------Function Headers----------
 void readMoviesFromFile(MovieData* movies, unsigned int* movieCount, unsigned int maxMovies);
 void addMovie(MovieData* movies, unsigned int* movieCount, unsigned int maxMovies);
+void printMovie(MovieData movie, unsigned int index);
+void printMovie(MovieData* movies, unsigned int* movieCount);
 void printMovies(MovieData* movies, unsigned int* movieCount);
 
 
