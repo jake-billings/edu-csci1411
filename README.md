@@ -10,5 +10,6 @@ My personal email is [jake@jakebillings.com](mailto:jake@jakebillings.com) in ca
 * Lab04: Approximation of Pi using Taylor Expansion - Accepts user input to calculate pi to a given number of elements in a Taylor Series approximation of pi
 * Lab05: Simple Game - Runs a simple 2-player game to exemplify the use of functions and random numbers. (Similar to Black Jack)
 * Lab06: Magic 8 Ball - Implementation of a lab from 1410 - Demonstrates a menu system, data serialization, sorting, and arrays (using memmove() and malloc())
-* Lab07: Coming Soon
-* Lab08: Coming Not So Soon
+* Lab07: Movie Database - A program that reads movies from a file and processes the data appropriately (basically a simpler version of Lab06)
+* Lab08: Coming Soon
+* Lab09: Coming Not So Soon
