@@ -134,6 +134,7 @@ void addMovie(MovieData* movies, unsigned int* movieCount, const unsigned int ma
     *movieCount = *movieCount + 1;
 }
 
+
 /**
  * Prints a specific movie to the console
  *
