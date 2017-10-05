@@ -145,11 +145,11 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Convert.h" />
-    <ClInclude Include="Functions.h" />
+    <None Include=".gitignore" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="lab06a.cpp" />
+    <ClCompile Include="billingsjLab06.cpp" />
+    <ClCompile Include="Functions.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
