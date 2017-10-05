@@ -133,6 +133,41 @@ void addMovie(MovieData* movies, unsigned int* movieCount, const unsigned int ma
     *movieCount = *movieCount + 1;
 }
 
+/**
+ * Prints a specific movie to the console
+ *
+ * @param movie MovieData to print
+ * @param index The unsigned integer index to print in the message
+ */
+void printMovie(MovieData movie, unsigned int index) {
+    //Print the movie
+    cout << "Movie " << index << ":\t\"" << movie.title << "\"\twas released " << movie.releaseYear;
+    cout << ",\tran for " << movie.runningTime << " minutes,\tand received a Rotten Tomatoes";
+    cout << " score of " << (int) movie.rating << "." << endl;
+}
+
+
+/**
+ * Prints a specific movies in the movies array based on user input
+ *
+ * @param movies The array of movies to read into
+ * @param movieCount The number of movies already in that array
+ */
+void printMovie(MovieData* movies, unsigned int* movieCount) {
+    //If there are no movies to print, tell the user we tried
+    if (*movieCount<=0) {
+        cout << "There are no movies to list. Try adding some or loading a file." << endl;
+    }
+
+    //Read the index that the user would like to print
+    unsigned int index;
+    cout << "Which movie would you like to view (enter an integer index)?" << endl;
+    cin >> index;
+
+    //Print the movie
+    printMovie(movies[index], index);
+}
+
 
 /**
  * Prints all movies in the movies array
@@ -149,9 +184,7 @@ void printMovies(MovieData* movies, unsigned int* movieCount) {
     //Iterate through each movie index (0, movieCount)
     for (unsigned int i = 0; i < *movieCount; i++) {
         //Print the movie
-        cout << "Movie " << i << ":\t" << movies[i].title << " was released\t" << movies[i].releaseYear;
-        cout << ", ran for\t" << movies[i].runningTime << " minutes, and received a Rotten Tomatoes";
-        cout << " score of \t" << (int) movies[i].rating << "." << endl;
+        printMovie(movies[i], i);
     }
 }
 
@@ -171,7 +204,7 @@ void handleUnknownInput() {
  *
  * @param movies The array of movies to read out of
  * @param movieCount The number of movies already in that array
- * @param maxmovies The maximum number of movies that can fit in the array
+ * @param maxMovies The maximum number of movies that can fit in the array
  */
 bool menuIteration(MovieData* movies, unsigned int* movieCount, const unsigned int maxMovies) {
     //Print the menu options.
@@ -179,6 +212,7 @@ bool menuIteration(MovieData* movies, unsigned int* movieCount, const unsigned i
     cout << "1.\tRead movies from a file" << endl;
     cout << "2.\tAdd Movie" << endl;
     cout << "3.\tList Movies" << endl;
+    cout << "4.\tPrint Specific Movie by Index" << endl;
     cout << "0.\tExit" << endl;
 
     //Allocate a space in memory for the user's answer and read it using cin
@@ -196,6 +230,9 @@ bool menuIteration(MovieData* movies, unsigned int* movieCount, const unsigned i
             break;
         case 3:
             printMovies(movies, movieCount);
+            break;
+        case 4:
+            printMovie(movies, movieCount);
             break;
         case 0:
             return false;
