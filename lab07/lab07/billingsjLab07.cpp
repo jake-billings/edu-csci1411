@@ -231,7 +231,7 @@ int main() {
     MovieData* responses = (MovieData*) malloc(sizeof(MovieData)*maxMovies);
 
     //Print a welcome message
-    cout << "Welcome to the Local Movie Database Ball." << endl;
+    cout << "Welcome to the Local Movie Database." << endl;
 
     //Keep executing the menu iteration function until it returns false.
     while (menuIteration(responses, &movieCount, maxMovies));
