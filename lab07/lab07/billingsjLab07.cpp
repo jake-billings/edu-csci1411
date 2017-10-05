@@ -15,6 +15,7 @@
 //Use the standard namespace
 using namespace std;
 
+
 //-------------Data Types-------------
 struct MovieData {
     string title;
@@ -23,10 +24,12 @@ struct MovieData {
     uint8_t rating;
 };
 
+
 //----------Function Headers----------
 void readMoviesFromFile(MovieData* movies, unsigned int* movieCount, unsigned int maxMovies);
 void addMovie(MovieData* movies, unsigned int* movieCount, unsigned int maxMovies);
 void printMovies(MovieData* movies, unsigned int* movieCount);
+
 
 //------Function Implementations------
 /**
@@ -61,6 +64,7 @@ void readMoviesFromFile(MovieData* movies, unsigned int* movieCount, const unsig
         //Declare strings to read lines
         string title, releaseYear, runningTime, rating;
 
+        //Read the lines from the file
         getline(input, title);
         getline(input, releaseYear);
         getline(input, runningTime);
@@ -128,6 +132,8 @@ void addMovie(MovieData* movies, unsigned int* movieCount, const unsigned int ma
     movies[*movieCount] = r;
     *movieCount = *movieCount + 1;
 }
+
+
 /**
  * Prints all movies in the movies array
  *
@@ -143,9 +149,9 @@ void printMovies(MovieData* movies, unsigned int* movieCount) {
     //Iterate through each movie index (0, movieCount)
     for (unsigned int i = 0; i < *movieCount; i++) {
         //Print the movie
-        cout << "Movie " << i << ": " << movies[i].title << " was released " << movies[i].releaseYear;
-        cout << ", ran for " << movies[i].runningTime << " minutes, and received a Rotten Tomatoes";
-        cout << " score of " << movies[i].rating << "." << endl;
+        cout << "Movie " << i << ":\t" << movies[i].title << " was released\t" << movies[i].releaseYear;
+        cout << ", ran for\t" << movies[i].runningTime << " minutes, and received a Rotten Tomatoes";
+        cout << " score of \t" << (int) movies[i].rating << "." << endl;
     }
 }
 
@@ -156,6 +162,7 @@ void printMovies(MovieData* movies, unsigned int* movieCount) {
 void handleUnknownInput() {
     cout << "Sorry. I don't know how to handle that option. Please pick from the menu." << endl;
 }
+
 
 /**
  * Executes one iteration of the menu loop.
@@ -196,19 +203,23 @@ bool menuIteration(MovieData* movies, unsigned int* movieCount, const unsigned i
             handleUnknownInput();
     }
 
+    cout << endl;
+
     //Return true because we want to complete the loop again
     // We would have returned false if we didn't.
     return true;
 }
+
 
 //-----------Main Function------------
 /**
  * int main()
  *
  * The main entry point for the application.
+ *
+ * Returns 0.
  */
 int main() {
-
     //Set a cap on the number of responses we can store that is way bigger than we would ever need
     const unsigned int maxMovies = 1024;
 
