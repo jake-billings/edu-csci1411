@@ -7,7 +7,7 @@
  * Status: Successfully compiled and run on csegrid
  */
 
-//Guard against functin redefinition
+//Guard against function redefinition
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H
 
