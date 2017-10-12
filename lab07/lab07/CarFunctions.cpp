@@ -3,8 +3,7 @@
 #include "CarFunctions.h"
 
 using namespace std;
-Car newCar(istream &in)
-{
+Car newCar(istream &in) {
 	Car car1;
 	cout << "Make: ";
 	in.ignore();
@@ -16,8 +15,7 @@ Car newCar(istream &in)
 	cout << endl;
 	return car1;
 }
-bool addCar(Car carToAdd, Car carArray[], int &currentSize, const int MAXSIZE)
-{
+bool addCar(Car carToAdd, Car carArray[], int &currentSize, const int MAXSIZE) {
 
 	if (currentSize < MAXSIZE)
 	{
@@ -28,8 +26,7 @@ bool addCar(Car carToAdd, Car carArray[], int &currentSize, const int MAXSIZE)
 	else
 		return false;
 }
-void listCars(ostream &out, Car carArray[], int &currentSize)
-{
+void listCars(ostream &out, Car carArray[], int &currentSize) {
 	for (int i = 0; i < currentSize; i++)
 	{
 		out << "Car " << i + 1 << endl;

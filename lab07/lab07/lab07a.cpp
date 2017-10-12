@@ -2,8 +2,7 @@
 #include "Car.h"
 #include "CarFunctions.h"
 using namespace std;
-int main()
-{
+int main() {
 	const int MAXSIZE = 2;
 	int currentSize = 0;
 	Car car1;

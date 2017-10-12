@@ -2,8 +2,7 @@
 #define CAR_H
 #include <string>
 using namespace std;
-struct Car
-{
+struct Car {
 	string make;
 	string model;
 	int year;
