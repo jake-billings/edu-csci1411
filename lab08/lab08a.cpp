@@ -5,12 +5,14 @@
  * Description: skills practice file copied from lab document
  * Status: compiles and runs on VS, Clion, and csegrid
  */
+
 #include <iostream>
 #include "Car.h"
 #include "CarFunctions.h"
+
 using namespace std;
-int main()
-{
+
+int main() {
 	const int MAXSIZE = 100;
 	int currentSize = 0;
 	Car car1;
@@ -18,8 +20,7 @@ int main()
 	int menu;
 	string make;
 	bool done = false;
-	while (!done)
-	{
+	while (!done) {
 		cout << "1. Add a new car to the array\n";
 		cout << "2. List out cars\n";
 		cout << "3. Search for a car by Make\n";
@@ -37,7 +38,7 @@ int main()
 			cin >> make;
 			searchCarMake(make, carArray, currentSize);
 			break;
-		case 4: 
+		case 4:
 			sortCarMake(carArray, currentSize);
 			break;
 		case 5: exit(0);
