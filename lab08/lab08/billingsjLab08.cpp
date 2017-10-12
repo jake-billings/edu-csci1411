@@ -145,13 +145,15 @@ void addMovie(MovieData* movies, unsigned int* movieCount, unsigned int maxMovie
 
     //Get inputs from user
     cout << "What is the title of the movie you would like to add?" << endl;
-    cin >> r.title;
+    cin.ignore();
+    getline(cin, r.title);
     cout << "What year was " << r.title << " released?" << endl;
     cin >> r.releaseYear;
     cout << "What was the run time of " << r.title << " in minutes?" << endl;
     cin >> r.runningTime;
     cout << "What percentage score did " << r.title << " receive on Rotten Tomatoes?" << endl;
     cin >> r.rating;
+    cin.ignore();
 
     //Append it to the array
     movies[*movieCount] = r;
