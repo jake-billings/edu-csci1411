@@ -5,13 +5,15 @@
  * Status: compiles and runs on VS, Clion, and csegrid
  */
 
-
 //---------Dependency Imports---------
 //Include cout
 #include <iostream>
 
 //Include ifstream
 #include <fstream>
+
+//Include string tools
+#include <string>
 
 //Use the standard namespace
 using namespace std;
@@ -68,7 +70,7 @@ void readMoviesFromFile(MovieData* movies, unsigned int* movieCount, unsigned in
     //Find out what file to read from
     string filePath;
     cout << "What file would you like to read from? (The default movies are in \"data.bin\".)" << endl;
-    cin.ignore(); //Ignore since we're using getline()
+    //cin.ignore(); //Ignore since we're using getline()
     getline(cin, filePath);
 
     //Default to movies.bin

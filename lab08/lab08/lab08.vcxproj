@@ -18,6 +18,9 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="billingsjLab08.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{110B49B5-D35F-4939-B7EF-6D08430A4DCE}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
@@ -141,14 +144,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="Car.h" />
-    <ClInclude Include="CarFunctions.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="CarFunctions.cpp" />
-    <ClCompile Include="lab08a.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
