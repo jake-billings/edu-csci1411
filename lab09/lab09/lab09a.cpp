@@ -8,17 +8,21 @@
 
 #include <iostream>
 #include "functions.h"
+
 using namespace std;
-int main()
-{
+
+int main() {
     int *arrayPtr;
-    int size = 3, inc = 2;
+
+    int size = 4, inc = 3;
     arrayPtr = allocateArray(size);
     for (int i = 0; i < size; i++)
         arrayPtr[i] = i;
     listArray(arrayPtr, size);
     arrayPtr = increaseArray(arrayPtr,size, inc);
     listArray(arrayPtr, size);
+
+	system("pause");
 
     return 0;
 }
