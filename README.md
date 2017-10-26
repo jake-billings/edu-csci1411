@@ -13,5 +13,6 @@ My personal email is [jake@jakebillings.com](mailto:jake@jakebillings.com) in ca
 * Lab07: Movie Database - A program that reads movies from a file and processes the data appropriately (basically a simpler version of Lab06)
 * Lab08: Movie Database Pt. 2 - An iteration of lab07 that includes sort and search functionality.
 * Lab09: Test Score Database - A database of test scores that allows for the calculation of averages
-* Lab10: Coming Soon
-* Lab11: Coming Not So Soon
+* Lab10: CStrings - Read CStrings from the console and reverse them
+* Lab11: Coming Soon...
+* Lab12: Coming Not So Soon...
