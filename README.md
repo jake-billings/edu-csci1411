@@ -15,5 +15,5 @@ My personal email is [jake@jakebillings.com](mailto:jake@jakebillings.com) in ca
 * Lab09: Test Score Database - A database of test scores that allows for the calculation of averages
 * Lab10: CStrings - Read CStrings from the console and reverse them
 * Lab11: Write pseudocode for CSCI1410 PA3 (see https://github.com/jake-billings/edu-c-demo)
-* Lab12: Coming Soon...
+* Lab12: Classes - Create a C++ class to store a student's grades in three quizzes for a semester class
 * Lab13: Coming Not So Soon...
