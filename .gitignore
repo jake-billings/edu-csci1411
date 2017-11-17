@@ -4,6 +4,7 @@
 .idea
 .DS_Store
 .swp
+labdocs/*.zip
 \~*
 cmake-build-debug
 CMakeLists.txt
