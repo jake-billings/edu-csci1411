@@ -39,4 +39,4 @@ ostream& operator << (ostream &out, Scores &scores);
  *
  * @param scoresVector
  */
-void bubbleSort(vector<Scores> scoresVector);
+void bubbleSort(vector<Scores>& scoresVector);

@@ -38,7 +38,7 @@ ostream& operator << (ostream &out, Scores &scores) {
  *
  * @param scoresVector
  */
-void bubbleSort(vector<Scores> scoresVector) {
+void bubbleSort(vector<Scores>& scoresVector) {
     //Using bubble sort, arrange Scores from tallest to shortest in the inventory vector.
     for (unsigned long i = 0; i<scoresVector.size(); i++) {
         for (unsigned long j = 0; j<scoresVector.size()-1; j++) {

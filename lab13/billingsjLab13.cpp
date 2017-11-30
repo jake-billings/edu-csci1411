@@ -70,6 +70,9 @@ int main() {
         scoresList.push_back(scores);
     }
 
+    //Sort the scores list using bubblesort
+    bubbleSort(scoresList);
+
     //Print a message stating we are entering the averaging-phase of the progam
     cout << "Here are the scores for each Scores object." << endl;
 
