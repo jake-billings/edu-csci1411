@@ -16,4 +16,4 @@ My personal email is [jake@jakebillings.com](mailto:jake@jakebillings.com) in ca
 * Lab10: CStrings - Read CStrings from the console and reverse them
 * Lab11: Write pseudocode for CSCI1410 PA3 (see https://github.com/jake-billings/edu-c-demo)
 * Lab12: Classes - Create a C++ class to store a student's grades in three quizzes for a semester class
-* Lab13: Coming Not So Soon...
+* Lab13: Vectors, Operators, and Sorting - Extend Lab12 by adding an operator, a vector, and a sorting algorithm
