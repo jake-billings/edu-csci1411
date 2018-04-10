@@ -1,7 +1,6 @@
 # edu-csci1411 #
-Whoa! This should not be public. This is a repository I use to backup my work for the class CSCI1411 at University of Colorado Denver. If you're reading this, there's a good chance this repository has been made public by accident. Please let me know at [jake.billings@ucdenver.edu](mailto:jake.billings@ucdenver.edu). In the mean time, adhere to the university's honor code for work in the class.
+This repository contains the work I completed for the course CSCI1411 Fundamentals of Computing Lab at the University of Colorado Denver. This work was completed the semester before I completed [CSCI2421 Data Structures and Program Design](https://github.com/jake-billings/edu-csci2421) and [CSCI2312 Object Oriented Programming](https://github.com/jake-billings/edu-csci2312). I put a lot of effort into documenting this code. However, the more recent repositories also contain unit testing and may be a better code example.
 
-My personal email is [jake@jakebillings.com](mailto:jake@jakebillings.com) in case there are any issues with my institutional email.
 
 ## Labs ##
 * Lab01: a very basic introduction lab; equivalent to Hello, World.
@@ -17,3 +16,6 @@ My personal email is [jake@jakebillings.com](mailto:jake@jakebillings.com) in ca
 * Lab11: Write pseudocode for CSCI1410 PA3 (see https://github.com/jake-billings/edu-c-demo)
 * Lab12: Classes - Create a C++ class to store a student's grades in three quizzes for a semester class
 * Lab13: Vectors, Operators, and Sorting - Extend Lab12 by adding an operator, a vector, and a sorting algorithm
+
+### Other Projects ###
+Checkout my other projects at [https://jakebillings.com](https://jakebillings.com) or contact me via [LinkedIn](https://www.linkedin.com/in/jake-billings/).
