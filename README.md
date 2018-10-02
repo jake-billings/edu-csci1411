@@ -1,4 +1,7 @@
 # edu-csci1411 #
+
+[![DOI](https://zenodo.org/badge/102031984.svg)](https://zenodo.org/badge/latestdoi/102031984)
+
 This repository contains the work I completed for the course CSCI1411 Fundamentals of Computing Lab at the University of Colorado Denver. This work was completed the semester before I completed [CSCI2421 Data Structures and Program Design](https://github.com/jake-billings/edu-csci2421) and [CSCI2312 Object Oriented Programming](https://github.com/jake-billings/edu-csci2312). I put a lot of effort into documenting this code. However, the more recent repositories also contain unit testing and may be a better code example.
 
 
